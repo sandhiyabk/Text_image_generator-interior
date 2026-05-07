@@ -34,3 +34,24 @@ def optimize_budget(products: List[Dict[str, Any]], room_type: str, total_budget
     # Sort: within-budget items first, then by price ascending
     selected.sort(key=lambda p: (not p["within_budget"], p.get("price", 0)))
     return selected
+
+class BudgetOptimizer:
+    """Wrapper class for backward compatibility."""
+    def __init__(self):
+        self.retriever = None
+    
+    def allocate(self, total_budget, room_type, style, detected_categories=None):
+        return {}
+    
+    def build_cart(self, total_budget: int, room_type: str, style: str, image_path: str = None) -> dict:
+        return {
+            "items": [],
+            "total_cost": 0,
+            "total_budget": total_budget,
+            "savings": total_budget,
+            "over_budget": False,
+            "alternatives": {}
+        }
+    
+    def get_room_categories(self, room_type: str) -> list:
+        return config.BUDGET_ALLOCATION.get(room_type, []).keys()

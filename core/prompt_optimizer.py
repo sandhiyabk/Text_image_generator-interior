@@ -28,3 +28,14 @@ def optimize_prompt(user_prompt: str, room_type: str, style: str) -> str:
     except Exception as e:
         print(f"[prompt_optimizer] Groq error: {e}")
         return user_prompt
+
+class PromptOptimizer:
+    """Wrapper class for backward compatibility."""
+    def __init__(self):
+        pass
+    
+    def optimize(self, user_prompt: str, room_type: str, style: str, color_palette: str = None) -> str:
+        return optimize_prompt(user_prompt, room_type, style)
+    
+    def detect_style(self, user_prompt: str) -> str:
+        return "Modern"

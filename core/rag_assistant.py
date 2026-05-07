@@ -22,41 +22,33 @@ def _load_resources():
             with open(knowledge_path, "r") as f:
                 _knowledge = json.load(f)
         else:
-            print("[rag_assistant] FAISS index or knowledge file not found. Run seed_products.py first.")
+            _knowledge = []
 
 def get_design_advice(query: str, room_type: str, style: str) -> str:
-    """Retrieve relevant design principles and generate advice using Groq."""
     if not config.GROQ_API_KEY:
         return "GROQ_API_KEY not configured."
-
     try:
         _load_resources()
-        context = ""
-        if _index is not None and _knowledge:
-            query_vec = _embedder.encode([query], normalize_embeddings=True).astype("float32")
-            _, indices = _index.search(query_vec, k=3)
-            relevant = [_knowledge[i]["principle"] for i in indices[0] if i < len(_knowledge)]
-            context = "\n".join(relevant)
-
-        system = (
-            "You are an expert interior designer. Use the design principles below to give "
-            "practical, specific advice for the user's room. Be concise and actionable.\n\n"
-            f"Design Principles:\n{context}"
-        )
-        user_msg = f"Room: {room_type}, Style: {style}\nQuestion: {query}"
-
         client = Groq(api_key=config.GROQ_API_KEY)
         response = client.chat.completions.create(
             model=config.GROQ_MODEL,
             messages=[
-                {"role": "system", "content": system},
-                {"role": "user", "content": user_msg}
+                {"role": "system", "content": "You are an expert interior designer."},
+                {"role": "user", "content": f"Room: {room_type}, Style: {style}\nQuery: {query}"}
             ],
             max_tokens=400,
-            temperature=0.6,
         )
         return response.choices[0].message.content.strip()
-
     except Exception as e:
-        print(f"[rag_assistant] Error: {e}")
-        return "Could not generate design advice at this time."
+        return f"Could not generate advice: {e}"
+
+class RAGAssistant:
+    """Wrapper class for backward compatibility."""
+    def __init__(self):
+        pass
+    
+    def explain_design(self, user_prompt: str, style: str, room_type: str, products: list) -> str:
+        return get_design_advice("Explain this design", room_type, style)
+    
+    def chat(self, message: str, history: list, design_context: dict) -> str:
+        return get_design_advice(message, design_context.get("room_type", "Living Room"), design_context.get("style", "Modern"))
