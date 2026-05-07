@@ -1,4 +1,5 @@
-import anthropic
+import streamlit as st
+from groq import Groq
 import config
 
 
@@ -17,27 +18,23 @@ STYLE_KEYWORDS = {
 class PromptOptimizer:
     def __init__(self):
         self.client = None
-        if config.ANTHROPIC_API_KEY and config.ANTHROPIC_API_KEY != "your_anthropic_api_key_here":
-            self.client = anthropic.Anthropic(api_key=config.ANTHROPIC_API_KEY)
+        if config.GROQ_API_KEY:
+            self.client = Groq(api_key=config.GROQ_API_KEY)
     
     def optimize(self, user_prompt: str, room_type: str, style: str, color_palette: str = None) -> str:
-        """Convert user prompt to detailed SDXL image generation prompt."""
         if not self.client:
             return self._fallback_optimize(user_prompt, room_type, style)
         
         style_keywords = STYLE_KEYWORDS.get(style, "")
         
-        system_prompt = """You are an expert in interior design and AI image generation. Your task is to convert 
-user's vague room descriptions into detailed, high-quality prompts for Stable Diffusion XL (SDXL) image generation.
+        system_prompt = """You are an expert in interior design and AI image generation. Convert vague room descriptions into detailed SDXL prompts.
 
 The optimized prompt should:
 - Be photorealistic and architectural rendering style
 - Include interior photography lighting and composition
-- Reference specific furniture, materials, and architectural details
-- Include the room type and detected style keywords
 - Be detailed enough for SDXL to generate high-quality images
 - Keep to one paragraph, under 200 words
-- Output ONLY the optimized prompt, no explanation or meta-commentary"""
+- Output ONLY the optimized prompt, no explanation"""
 
         color_info = f" with {color_palette} color palette" if color_palette else ""
         
@@ -46,55 +43,43 @@ Room type: {room_type}
 Style: {style}
 {color_info}
 
-Style keywords to incorporate: {style_keywords}
+Style keywords: {style_keywords}
 
-Generate a detailed SDXL prompt for generating this interior design image."""
+Generate a detailed SDXL prompt."""
 
         try:
-            response = self.client.messages.create(
-                model=config.CLAUDE_MODEL,
-                max_tokens=300,
-                system=system_prompt,
+            response = self.client.chat.completions.create(
+                model=config.GROQ_MODEL,
                 messages=[
+                    {"role": "system", "content": system_prompt},
                     {"role": "user", "content": user_message}
-                ]
+                ],
+                temperature=0.7,
+                max_tokens=300
             )
-            return response.content[0].text.strip()
+            return response.choices[0].message.content.strip()
         except Exception as e:
+            st.error(f"Error: {e}")
             return self._fallback_optimize(user_prompt, room_type, style)
     
     def _fallback_optimize(self, user_prompt: str, room_type: str, style: str) -> str:
-        """Fallback prompt optimization without API."""
         style_keywords = STYLE_KEYWORDS.get(style, "")
-        return f"Photorealistic interior photography of a {style.lower()} {room_type.lower()}, {user_prompt}. {style_keywords}. Natural lighting from windows, professional architectural photography, high detail, 8k quality, interior design magazine style."
+        return f"Photorealistic interior of a {style.lower()} {room_type.lower()}, {user_prompt}. {style_keywords}. Natural lighting, 8k quality."
     
     def detect_style(self, user_prompt: str) -> str:
-        """Detect which style best matches the user prompt."""
         if not self.client:
             return "Modern"
         
-        system_prompt = """You are an interior design style classifier. Analyze the user's description and select the most appropriate style from this list:
-- Modern: Contemporary, sleek, minimal
-- Scandinavian: Clean, white, natural wood, functional, bright
-- Bohemian: Eclectic, colorful, layered, artistic
-- Industrial: Raw, urban, exposed materials, edgy
-- Japandi: Japanese + Scandinavian, zen, natural
-- Luxury: Elegant, premium, sophisticated
-- Minimalist: Simple, uncluttered, essential
-- Rustic: Country, warm, natural wood, farmhouse
-
-Respond with just the style name, no explanation."""
-
         try:
-            response = self.client.messages.create(
-                model=config.CLAUDE_MODEL,
-                max_tokens=50,
-                system=system_prompt,
+            response = self.client.chat.completions.create(
+                model=config.GROQ_MODEL,
                 messages=[
+                    {"role": "system", "content": "Select ONE style: Modern, Scandinavian, Bohemian, Industrial, Japandi, Luxury, Minimalist, Rustic"},
                     {"role": "user", "content": user_prompt}
-                ]
+                ],
+                max_tokens=50
             )
-            detected = response.content[0].text.strip()
+            detected = response.choices[0].message.content.strip()
             if detected in config.STYLES:
                 return detected
             return "Modern"
