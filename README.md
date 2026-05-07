@@ -5,7 +5,7 @@ An AI-powered interior design web application that generates room designs from t
 ## Features
 
 - **AI Design Generation**: Describe any room and get photorealistic AI-generated interior designs using Stable Diffusion XL
-- **Smart Prompt Optimization**: Claude AI enhances vague descriptions into detailed image generation prompts
+- **Smart Prompt Optimization**: Groq LLM enhances vague descriptions into detailed image generation prompts
 - **Visual Product Matching**: CLIP-powered similarity search finds furniture that matches your generated design
 - **Budget Optimization**: Smart allocation algorithm fits recommendations within budget
 - **RAG-Powered Design Advice**: Get expert interior design explanations based on 40+ design principles
@@ -17,10 +17,10 @@ An AI-powered interior design web application that generates room designs from t
 | Component | Technology |
 |-----------|------------|
 | Frontend | Streamlit |
-| Image Generation | Replicate (SDXL) |
-| LLM | Anthropic Claude (claude-haiku-4-5) |
+| Image Generation | HuggingFace Inference API (SDXL) |
+| LLM | Groq (llama-3.1-8b-instant) |
 | Text Embeddings | sentence-transformers (all-MiniLM-L6-v2) |
-| Image Embeddings | CLIP (openai/clip-vit-base-patch32) |
+| Image Embeddings | open_clip_torch (ViT-B-32) |
 | Vector DB | ChromaDB |
 | Knowledge Base | FAISS |
 | Database | SQLite (via SQLAlchemy) |
@@ -47,8 +47,8 @@ cp .env.example .env
 ```
 
 You need:
-- **ANTHROPIC_API_KEY**: Get from [Anthropic Console](https://console.anthropic.com/)
-- **REPLICATE_API_TOKEN**: Get from [Replicate Dashboard](https://replicate.com/dashboard)
+- **GROQ_API_KEY**: Get free from [Groq Console](https://console.groq.com)
+- **HF_TOKEN**: Get free from [HuggingFace Settings](https://huggingface.co/settings/tokens)
 
 ### 3. Seed Data
 
@@ -82,8 +82,8 @@ ai-interior-copilot/
 ├── requirements.txt        # Dependencies
 ├── core/                  # Core modules
 │   ├── clip_embedder.py    # CLIP embeddings
-│   ├── prompt_optimizer.py # Claude prompt optimization
-│   ├── image_generator.py # Replicate SDXL
+│   ├── prompt_optimizer.py # Groq prompt optimization
+│   ├── image_generator.py # HuggingFace SDXL
 │   ├── product_retriever.py # ChromaDB search
 │   ├── budget_optimizer.py # Budget allocation
 │   └── rag_assistant.py   # FAISS RAG
@@ -106,18 +106,18 @@ ai-interior-copilot/
 
 ## API Requirements
 
-| Service | Free Tier | Notes |
-|---------|-----------|-------|
-| Replicate | $0 (new users) | ~0.003-0.01 per image |
-| Anthropic | $0 (new users) | claude-haiku-4-5 is free |
+| Service | Cost | Notes |
+| --- | --- | --- |
+| Groq | Free | Get key at console.groq.com |
+| HuggingFace Inference API | Free | Get token at huggingface.co/settings/tokens |
 | ChromaDB | Free | Local only |
 | FAISS | Free | Local only |
 
 ## Troubleshooting
 
-- **No images generate**: Check REPLICATE_API_TOKEN in .env
+- **No images generate**: Check HF_TOKEN in .env
 - **No products found**: Run `python data/seed_products.py`
-- **No design explanations**: Check ANTHROPIC_API_KEY in .env
+- **No design explanations**: Check GROQ_API_KEY in .env
 - **Slow embedding**: Requires GPU for best performance
 
 ## License

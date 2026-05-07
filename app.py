@@ -44,12 +44,12 @@ with st.sidebar:
     st.divider()
     
     st.caption("Settings")
-    
-    if not config.GROQ_API_KEY:
-        st.warning("Add GROQ_API_KEY to .env")
-    
-    if not config.HF_TOKEN:
-        st.warning("Add HF_TOKEN to .env")
+
+if not config.GROQ_API_KEY or config.GROQ_API_KEY == "your_groq_api_key_here":
+    st.warning("Add GROQ_API_KEY to .env")
+
+if not config.HF_TOKEN or config.HF_TOKEN == "your_huggingface_token_here":
+    st.warning("Add HF_TOKEN to .env")
 
 
 if "current_design" not in st.session_state or not st.session_state["current_design"]:
@@ -119,5 +119,10 @@ if "current_design" not in st.session_state or not st.session_state["current_des
     with col3:
         pass
 
-elif st.session_state.get("current_design") and st.session_state["current_design"].get("image_path"):
-    st.switch_page("pages/2_Results.py")
+else:
+    design = st.session_state.get("current_design")
+    if design and isinstance(design, dict) and design.get("image_url"):
+        st.switch_page("pages/2_Results.py")
+    else:
+        st.session_state["current_design"] = None
+        st.switch_page("pages/1_Generate.py")
