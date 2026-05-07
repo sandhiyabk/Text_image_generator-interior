@@ -1,0 +1,242 @@
+[
+  {
+    "id": "dk_001",
+    "principle": "Scandinavian Light and Air",
+    "content": "Scandinavian design prioritizes natural light, clean lines, and functional simplicity. Use white and light wood tones to maximize light reflection. Keep furniture minimal and functional with clutter-free surfaces. The goal is creating spaces that feel open, airy, and connected to nature.",
+    "tags": ["scandinavian", "lighting", "minimalist"]
+  },
+  {
+    "id": "dk_002",
+    "principle": "Japandi Balance",
+    "content": "Japandi combines Japanese wabi-sabi aesthetics with Scandinavian functionality. Embrace natural materials, muted earth tones, and organic shapes. Prioritize quality over quantity - select fewer pieces that bring joy. Negative space is as important as filled space.",
+    "tags": ["japandi", "minimalist", "japanese", "balance"]
+  },
+  {
+    "id": "dk_003",
+    "principle": "60-30-10 Color Rule",
+    "content": "Apply the 60-30-10 rule for balanced color: 60% dominant color (walls, large furniture), 30% secondary color (curtains, rugs, sofa), 10% accent color (cushions, art, accessories). This creates visual harmony while allowing personality to shine.",
+    "tags": ["color", "rules", "balance"]
+  },
+  {
+    "id": "dk_004",
+    "principle": "Furniture Scale and Proportion",
+    "content": "Match furniture size to room dimensions. A large sofa in a small room overwhelms; tiny furniture in a spacious room looks lost. General rule: seating should allow easy conversation without shouting. Leave clear pathways of at least 36 inches.",
+    "tags": ["furniture", "scale", "proportion"]
+  },
+  {
+    "id": "dk_005",
+    "principle": "Color Temperature in Lighting",
+    "content": "Lighting color temperature dramatically affects room mood. Warm white (2700K) creates cozy atmosphere for bedrooms and living rooms. Cool white (4000K) suits task areas like kitchens and home offices. Layer ambient, task, and accent lighting for flexibility.",
+    "tags": ["lighting", "temperature", "mood"]
+  },
+  {
+    "id": "dk_006",
+    "principle": "Open Plan Flow",
+    "content": "Open plan living requires visual cohesion through consistent flooring, repeated color themes, and furniture groupings that define distinct zones without walls. Use rugs, lighting, and furniture arrangement to create separate areas that feel connected.",
+    "tags": ["open-plan", "layout", "flow"]
+  },
+  {
+    "id": "dk_007",
+    "principle": "Biophilic Design",
+    "content": "Incorporate nature into interiors through plants, natural materials, water features, and natural light. Studies show biophilic elements reduce stress and improve creativity. Even small spaces benefit from living walls or potted plants.",
+    "tags": ["biophilic", "nature", "wellness"]
+  },
+  {
+    "id": "dk_008",
+    "principle": "Bohemian Layering",
+    "content": "Boho style embraces maximalism through layered textures, patterns, and global influences. Mix vintage with new, layer rugs, and display collected treasures. The key is intentional curating - each piece should tell a story or bring happiness.",
+    "tags": ["bohemian", "layering", "textiles"]
+  },
+  {
+    "id": "dk_009",
+    "principle": "Industrial Elements",
+    "content": "Industrial style celebrates raw materials: exposed brick, metal beams, concrete, and reclaimed wood. Balance rugged elements with soft textures to avoid coldness. Use warm lighting and plush textiles to create inviting spaces within industrial shells.",
+    "tags": ["industrial", "raw-materials", "exposed"]
+  },
+  {
+    "id": "dk_010",
+    "principle": "Minimalist Negative Space",
+    "content": "Minimalism isn't about emptiness - it's about intentional use of space. Each object should have a purpose or bring joy. Empty surfaces allow eyes to rest. Quality over quantity: fewer, better pieces create calm, focused environments.",
+    "tags": ["minimalist", "negative-space", "simplicity"]
+  },
+  {
+    "id": "dk_011",
+    "principle": "Luxury Material Choices",
+    "content": "Luxury in interiors comes from material quality: marble, solid wood, genuine leather, natural stone. These materials age beautifully and feel substantial. Focus on touchpoints: door handles, switch plates, and lighting fixtures.",
+    "tags": ["luxury", "materials", "quality"]
+  },
+  {
+    "id": "dk_012",
+    "principle": "Bedroom Feng Shui",
+    "content": "Position bed with headboard against solid wall, not facing door directly. Keep electronics and work items out of bedrooms for better sleep. Use soft, rounded lighting and natural fabrics. Plants should be limited - they absorb oxygen at night.",
+    "tags": ["feng-shui", "bedroom", "sleep"]
+  },
+  {
+    "id": "dk_013",
+    "principle": "Kitchen Work Triangle",
+    "content": "The kitchen work triangle (sink, refrigerator, stove) should form a triangle with sides between 4-9 feet each. Minimize obstacles between stations. Keep countertops clear near each work zone for efficient meal preparation.",
+    "tags": ["kitchen", "ergonomics", "triangle"]
+  },
+  {
+    "id": "dk_014",
+    "principle": "Home Office Ergonomics",
+    "content": "Position monitor at arm's length, top at eye level. Chair should support lower back with feet flat on floor or footrest. Task lighting reduces eye strain. Keep essential items within easy reach.",
+    "tags": ["office", "ergonomics", "productivity"]
+  },
+  {
+    "id": "dk_015",
+    "principle": "Rug Sizing Rules",
+    "content": "Living room rugs should extend under at least the front legs of all seating - better yet, sit all furniture on rug. Dining rugs need 24 inches beyond table edges. Poorly sized rugs make rooms feel smaller or unfinished.",
+    "tags": ["rugs", "sizing", "living-room"]
+  },
+  {
+    "id": "dk_016",
+    "principle": "Curtain Height Rules",
+    "content": "-mount curtains as high as possible to create the illusion of taller ceilings. Floor-length curtains feel more formal. For casual spaces, have them just touch floor. Always extend 4-6 inches beyond window frames.",
+    "tags": ["curtains", "windows", "height"]
+  },
+  {
+    "id": "dk_017",
+    "principle": "Mirror Placement",
+    "content": "Place mirrors opposite windows to reflect natural light and outdoor views. Avoid facing mirrors at clutter or negative spaces. Large mirrors create depth in small rooms. Floor mirrors in bedrooms help with dressing - position near good lighting.",
+    "tags": ["mirrors", "lighting", "space"]
+  },
+  {
+    "id": "dk_018",
+    "principle": "Plant Placement",
+    "content": "Group plants in odd numbers for visual interest. Match light requirements to placement - low light plants away from windows. Use varying heights and containers. Large floor plants anchor furniture groupings.",
+    "tags": ["plants", "greenery", "placement"]
+  },
+  {
+    "id": "dk_019",
+    "principle": "Gallery Wall Composition",
+    "content": "Plan gallery walls before hanging - lay out on floor first. Mix frame sizes and styles, or stick to consistent frames for cohesion. Center at eye level (57-60 inches from floor). Leave 2-4 inches between frames.",
+    "tags": ["gallery", "art", "walls"]
+  },
+  {
+    "id": "dk_020",
+    "principle": "Storage Solutions",
+    "content": "Every item needs a home before it enters your space. Use vertical storage in small spaces. Open shelving requires curation and maintenance - closed storage feels cleaner. Seasonal items go high or deep in closets.",
+    "tags": ["storage", "organization", "clutter"]
+  },
+  {
+    "id": "dk_021",
+    "principle": "Texture Layering",
+    "content": "Combine smooth, rough, soft, and hard textures for interest. A neutral room gains character through texture contrast. Throw pillows, rugs, and blankets add warmth. Metal, glass, and wood create natural material variety.",
+    "tags": ["texture", "layering", "materials"]
+  },
+  {
+    "id": "dk_022",
+    "principle": "Statement Walls",
+    "content": "One statement wall adds drama without overwhelming. Bold paint, wallpaper, or textured materials focus attention. Keep other walls simple. Accent walls work best when they face entry or contain focal points like fireplaces.",
+    "tags": ["accent-wall", "paint", "focus"]
+  },
+  {
+    "id": "dk_023",
+    "principle": "Cohesive Color Flow",
+    "content": "Connect rooms through color continuity while allowing personality in each space. Repeat accent colors in adjacent rooms. Maintain consistent undertones (warm or cool) throughout. Floor material transition zones soften between different flooring.",
+    "tags": ["color", "flow", "continuity"]
+  },
+  {
+    "id": "dk_024",
+    "principle": "Window Treatment Privacy",
+    "content": "Balance privacy with light - sheer curtains plus blackout panels offer flexibility. Decorative film provides privacy without losing light. Upper-only treatments maintain views while screening lower windows.",
+    "tags": ["windows", "privacy", "treatments"]
+  },
+  {
+    "id": "dk_025",
+    "principle": "Kitchen Island Function",
+    "content": "Islands need 36-42 inches of clearance on all occupied sides. Include seating for casual dining. Add outlets on sides facing seating. Consider second-level overhang for breakfast bar seating.",
+    "tags": ["kitchen", "island", "function"]
+  },
+  {
+    "id": "dk_026",
+    "principle": "Bathroom Upgrade ROI",
+    "content": "Focus on high-touch items: faucet, showerhead, mirrors, and lighting. Fresh grout and caulk transform old bathrooms. Proper ventilation prevents mold. Heated floors add luxury in master baths.",
+    "tags": ["bathroom", "renovation", "upgrades"]
+  },
+  {
+    "id": "dk_027",
+    "principle": "Entryway First Impressions",
+    "content": "Entryways set tone for entire home. Include storage for daily items. Add mirror for final check. Good lighting welcomes. Clear path to other areas - avoid furniture that blocks flow.",
+    "tags": ["entryway", "first-impression", "flow"]
+  },
+  {
+    "id": "dk_028",
+    "principle": "Dining Ambiance",
+    "content": "Dining rooms benefit from dimmable overhead lighting and candlelight. Sideboards provide serving space and storage. Art above sideboard creates focal point. Table size should allow elbow room - at least 24 inches per person.",
+    "tags": ["dining", "ambiance", "entertaining"]
+  },
+  {
+    "id": "dk_029",
+    "principle": "Child-Safe Design",
+    "content": "Secure heavy furniture to walls. Use corner guards on sharp edges. Avoid glass in low locations. Create zones for play with easy supervision. Storage at child height encourages independence.",
+    "tags": ["safety", "children", "family"]
+  },
+  {
+    "id": "dk_030",
+    "principle": "Pet-Friendly Interiors",
+    "content": "Choose durable fabrics (leather, microfiber). Provide designated pet spaces. Easy-clean floors (hardwood, tile). Built-in pet beds. Consider pet traffic patterns when placing furniture.",
+    "tags": ["pets", "durability", "family"]
+  },
+  {
+    "id": "dk_031",
+    "principle": "Seasonal Rotation",
+    "content": "Rotate textiles seasonally - heavy curtains and throws in winter, lighter linens in summer. Store winter items in vacuum bags. Refresh accessories with seasons. Change artwork with mood.",
+    "tags": ["seasonal", "rotation", "textiles"]
+  },
+  {
+    "id": "dk_032",
+    "principle": "Outdoor-Indoor Connection",
+    "content": "Extend interior style to patios and balconies. Use indoor-outdoor rugs. Repeat color palettes. Create seamless transitions with consistent flooring materials near doorways.",
+    "tags": ["outdoor", "connection", "patio"]
+  },
+  {
+    "id": "dk_033",
+    "principle": "Lighting Layering",
+    "content": "Combine ambient (general), task (specific work areas), and accent (decorative) lighting. Each layer serves purpose. Use dimmers for flexibility. Smart lighting allows scene control.",
+    "tags": ["lighting", "layers", "ambiance"]
+  },
+  {
+    "id": "dk_034",
+    "principle": "Wall Art Height",
+    "content": "Center art at 57-60 inches from floor - average eye level when standing. Group art so center of composition is at this height. Art above furniture should have 6-8 inches clearance above.",
+    "tags": ["art", "placement", "height"]
+  },
+  {
+    "id": "dk_035",
+    "principle": "Vertical Emphasis",
+    "content": "Draw eyes up to create spacious feel in small rooms. Floor-to-ceiling curtains, tall furniture, vertical paneling. Vertical lines elongate; horizontal lines widen. Mirrors hung vertically expand apparent height.",
+    "tags": ["vertical", "space", "proportion"]
+  },
+  {
+    "id": "dk_036",
+    "principle": "Kitchen Backsplash Impact",
+    "content": "Treat backsplash as opportunity for personality - bold tile, interesting pattern, or classic subway. Extend to ceiling for impact. Match quality to counters - cheap backsplash devalues upgrades.",
+    "tags": ["kitchen", "backsplash", "impact"]
+  },
+  {
+    "id": "dk_037",
+    "principle": "Ceiling Interest",
+    "content": "Don't neglect the fifth wall - painted ceilings add unexpected color. Beadboard adds texture. Exposed beams create architectural interest. Pendant lights draw eye upward. White ceiling recedes visually.",
+    "tags": ["ceiling", "interest", "architectural"]
+  },
+  {
+    "id": "dk_038",
+    "principle": "Budget Allocation",
+    "content": "Prioritize high-impact areas: kitchen and bath remodels yield best ROI. Invest in quality where you touch - seating, mattress, cookware. Save on trend items that rotate. Wait for quality sales on big-ticket items.",
+    "tags": ["budget", "roi", "priorities"]
+  },
+  {
+    "id": "dk_039",
+    "principle": "Sustainable Choices",
+    "content": "Choose certified sustainable materials (FSC wood, recycled content). Low-VOC paints improve air quality. Energy-efficient appliances. Vintage furniture has character and zero footprint. Quality pieces last longer.",
+    "tags": ["sustainable", "eco", "healthy"]
+  },
+  {
+    "id": "dk_040",
+    "principle": "Personal Expression",
+    "content": "Your home should reflect your story. Display travel treasures, family photos, collections. Mix high and low pieces. Don't follow trends exactly - adapt to your lifestyle. Comfort trumps perfection. Live with what brings joy.",
+    "tags": ["personal", "expression", "lifestyle"]
+  }
+]
